@@ -12,10 +12,79 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <!-- user vaghti ba mobile ya tablet miad khoob bbine vazeho -->
   <!-- fela in dota meta ejbari!!! -->
+
+
+
+
+
+
+
+
+
+  <style>
+
+    html , body {
+      background: #e1e1e1;
+      font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;/* inja bi tasir bod */
+    }
+    a {
+      color: #222;
+    }    
+    #main-header {
+      background: #fff;
+/*       border: 1px dashed #000; */
+      padding:10px;/* padding fasele az anasor dakhel */
+      /*margin:20px; margin fasele az biron */
+      box-shadow: 0 4px 20px 2px #999;
+
+    }
+    #main-header h1 {
+      font-size: 30px;
+      margin: 0;
+      float: left;
+      margin-right: 20px;
+    }
+    #main-header nav ul {
+      list-style: none;
+      padding:0;
+      margin:0;
+    }
+    #main-header nav ul li {
+      float: left;
+      margin-left: 25px;
+    }
+    #main-header nav ul li a {
+      padding: 10px;
+      display: block;/* tag a inline hast va bara tagaye inline padding az chap va rast emal mishe fght va bala pain nmigire */
+      text-decoration: none;
+      border: 1px solid transparent;/* bara hal tekon khordan item / borderi darim namari ba in size */
+    }
+    #main-header nav ul li a:hover {/* sudo class hamishe ye noghte / yani tain knim to ye state khasi in sharayeto dashte bashe */
+      background:#f7f7f7;
+      border: 1px solid #e1e1e1;
+      border-radius: 3px;
+    }
+
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size:0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  </style>
+
+
+
+
+
 </head>
 
 <body>
-  <header>
+  <header id="main-header" class="clearfix">
     <!-- tag menu asli chi bashe -->
     <h1>Plyaers Unknown Battlegrounds</h1>
     <nav>
