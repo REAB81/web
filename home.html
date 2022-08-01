@@ -297,7 +297,8 @@
     }
 
     form textarea,
-    form input {
+    form input,
+    form button {
       padding: 10px;
       border: 1px solid #d1d1d1;
       border-radius: 10px;
@@ -314,12 +315,23 @@
     form label {
       margin-bottom: 10px
     }
+
     form fieldset {
       padding: 10px;
       margin-bottom: 20px;
     }
+
     form fieldset legend {
       font-weight: bold;
+    }
+
+    .gun-scale {
+      width: 200px;
+      height: 200px;
+    }
+
+    .guns-container {
+      text-align: center;
     }
   </style>
 
@@ -377,8 +389,25 @@
       </p>
     </aside>
 
+
+    <div class="card guns-container">
+      <form>
+        <button onclick="SowNextGun(true); return false;">next gun</button>
+        <button onclick="SowNextGun(false); return false;">previous</button>
+        <button onclick="SowNextGun(); return false;">none</button>
+      </form>
+      <figure id="figure1">
+        <img id="gun-img" class="gun-scale" src="https://www.bgmigame.com/wp-content/uploads/2021/11/m416.png"
+          alt="m416" />
+        <figcaption id="gun-cap">m416</figcaption>
+      </figure>
+      <h2>Some Guns At Pubg</h2>
+    </div>
+
+
     <main class="card">
       <!-- mohtava asli page / mohtava e ke hey avaz mishe -->
+
       <ol class="post-list">
         <li>
           <article>
@@ -646,6 +675,36 @@
     </div>
   </footer>
   <!-- </div> -->
+
+
+
+
+  <script>
+    /*      alert("Hello World!"); hamishe ghabl inke body tamom she mizarim
+         level = prompt("What is your level")
+         alert("your level prime plus = "+ level + 5)   11 nmishe joftesho string mikne kenar ham mizare */
+    function SowNextGun(value) {
+      debugger
+      var id = document.getElementById("gun-img")
+      if (typeof value == 'undefined') {
+        if (id.src.indexOf('398') == -1) value = true;
+        else {
+          value = false;
+        }
+      }
+      if (value) {
+        id.src = 'https://www.citypng.com/public/uploads/preview/-11598984135sj65juy398.png';
+        var id2 = document.getElementById("gun-cap");
+        id2.innerHTML = "AUG";
+      }
+      else {
+        id.src = 'https://www.bgmigame.com/wp-content/uploads/2021/11/m416.png"';
+        var id2 = document.getElementById("gun-cap");
+        id2.innerHTML = "m416";
+      }
+
+    }
+  </script>
 
 </body>
 
