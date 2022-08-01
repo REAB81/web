@@ -288,6 +288,39 @@
     {
       color:red;
     } --------------------------------------------------important-----------------------------------------------------*/
+    form>div {
+      padding-bottom: 10px;
+    }
+
+    form label {
+      display: block;
+    }
+
+    form textarea,
+    form input {
+      padding: 10px;
+      border: 1px solid #d1d1d1;
+      border-radius: 10px;
+      background: #f7f7f7;
+    }
+
+    form input:hover,
+    form textarea:hover {
+      /* == form input:focus ,form textarea:focus */
+      background: white;
+      border-color: red;
+    }
+
+    form label {
+      margin-bottom: 10px
+    }
+    form fieldset {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    form fieldset legend {
+      font-weight: bold;
+    }
   </style>
 
   <!-- d 25:43 v4 releative ->frz kn pos ndre baad nesbat be bironi tarin tag hesab kn top left va ... -->
@@ -465,9 +498,106 @@
     </main>
   </div>
 
+  <div class="container">
+    <section id="contact-form" class="card">
+      <form method="get" action="#">
+
+        <fieldset>
+          <legend>Basic</legend>
+          <!-- dota atribiot migire get ya post va action get balash user va password ro neshon mide ama post na / action yaani b kodom link bre-->
+          <!-- <form method="get" action="/signup"> age method ro nagim by defualt get dar nazar migire -->
+          <!-- post method behrari va aksara bayad az in estefade bknim -->
+          <div>
+            <!-- ke bre khat baadi -->
+            <label for="username">Username</label><!-- neshon bedim chio darim miporsim -->
+            <input id="username" type="text" name="username" placeholder="exm:John Nash" />
+            <!-- mesali ro to kadr neshon bedim  / value besorat pishfarz tosh yechizi ro gharar mide age reset knim baz hamin mishe value="HLF H E R E N" 
+          / stringi ke to name hast moghe post baad alamat soal miad-->
+
+            <!-- <label>
+          <input type="text" name="username" placeholder="exm:John Nash"/>Username
+          </label>
+          hata vaghi ro username click knim mitonim to box benevisim yaani lazem nist hatma ro box bznim RAH1-->
+
+            <!-- <label for="abc">Username</label>
+          <input id="abc" type="text" name="username" placeholder="exm:John Nash" />
+          yaani label username bara id abc hast -->
+
+          </div>
+          <div>
+            <label for="password">Password</label><!-- neshon bedim chio darim miporsim -->
+            <input id="password" type="password" name="password" required />
+            <!-- required yaani elzami k to html 5 moarefi shod va bazi browsera support nmiknn / user hatma bayad por kne -->
+          </div>
+
+          <div>
+            <label>Gender</label>
+            <label>
+              <!-- fek knm chon displayesh inline hast kenar ham gharar grftn -->
+              <!-- label vase inke hata ro neveshte ham click kardim entekhab beshe / label->neveshte e ke kenar input miad ama vaghti input ba esmesho mibarim to label yani kol label input hast -->
+              <input type="radio" name="gender" value="male" />Male
+              <!-- value bala to method post neshon dade mishe -->
+              <!-- name hatma bayad bedim age nadim har dota ha har chandta button baham mitonn entekhab beshan (hata age name hashon motafavet bashan) ps name hashon yeki bayad bashan -->
+            </label>
+            <label>
+              <input type="radio" name="gender" value="female" />Female
+              <!-- checked -> be sorat pish farz entekhab mikne -->
+            </label>
+          </div>
+
+          <div>
+            <label>
+              <input type="checkbox" name="skills" value="Programming" />Programming
+              <input type="checkbox" name="skills" value="Gaming" />Gaming
+              <input type="checkbox" name="skills" value="Dancing" />Dancing
+              <!-- checked -> be sorat pish farz entekhab mikne -->
+            </label>
+          </div>
+
+          <div>
+            <label>City</label>
+            <select name="city" id="city">
+              <option value="">Select City</option>
+              <option value="tabriz">Tabriz</option><!-- selected -> be sorat pish farz entekhab mikne -->
+              <option value="qom">Qom</option>
+              <option value="tehran">Tehran</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Mori Info</legend>
+
+          <div>
+            <label>Bio</label>
+            <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
+          </div>
+
+          <div>
+            <label>Photo</label>
+            <input type="file" name="photo" value="photo" />
+          </div>
+
+          <div>
+            <label>Gmail</label>
+            <input type="email" name="email" /> <!-- value chizi ke bsorat pishfarz rosh mizare -->
+          </div>
+        </fieldset>
+
+        <div>
+          <input type="submit" value="Register" />
+          <input type="reset" value="Reser form" />
+          <!-- <button type="submit"><strong>Reset</strong></button> button ba submit hich farghi ndre ama to button mitonim html benevisim -->
+        </div>
+
+      </form>
+    </section>
+  </div>
+
   <section id="footer-links" class="clearfix">
+    <!-- yek bakhsh / to html4 age bodim bayad az div estfade mikrdim-->
     <div class="container">
-      <!-- yek bakhsh / to html4 age bodim bayad az div estfade mikrdim-->
       <div class="column">
         <h1>Browse</h1>
         <ul>
