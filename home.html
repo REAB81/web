@@ -22,47 +22,77 @@
 
 
   <style>
-
-    html , body {
+    html,
+    body {
       background: #e1e1e1;
-      font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 0;/* inja bi tasir bod */
+      padding: 0;
+      /* inja bi tasir bod */
+      padding-top: 30px;
+      /* bara header plyaer unknown batlle... home .. */
     }
+
     a {
       color: #222;
-    }    
+    }
+
+    /* a:hover {
+      color: blue;
+    } */
     #main-header {
       background: #fff;
-/*       border: 1px dashed #000; */
-      padding:10px;/* padding fasele az anasor dakhel */
+      /*       border: 1px dashed #000; */
+      padding: 8px;
+      /* padding fasele az anasor dakhel */
       /*margin:20px; margin fasele az biron */
       box-shadow: 0 4px 20px 2px #999;
-
+      /* jalase 4 painia */
+      position: fixed;
+      /* hamishe bala hast */
+      /* engar hich fazaie eshghal nkrde */
+      /* position:absolote ,fixed , reletive; default: static (vojod ndre engar)*/
+      top: 0;
+      /* fasele az safhe */
+      left: 0;
+      right: 0;
+      z-index: 1;
+      /* z-index b sorat pishfarz 0 ama mitonim bar asas olaviat taghir bedim j 4 d35 */
+      /* chon ham header va footer position drn bhm rikht va majbor shodim estefade knim */
+      /* kodom element roy onyeki gharar bgire har chghd bishtr shd olviat ba one */
     }
+
     #main-header h1 {
-      font-size: 30px;
+      font-size: 25px;
       margin: 0;
       float: left;
       margin-right: 20px;
+      margin-top: 5px;
     }
+
     #main-header nav ul {
       list-style: none;
-      padding:0;
-      margin:0;
+      padding: 0;
+      margin: 0;
     }
+
     #main-header nav ul li {
       float: left;
       margin-left: 25px;
     }
+
     #main-header nav ul li a {
       padding: 10px;
-      display: block;/* tag a inline hast va bara tagaye inline padding az chap va rast emal mishe fght va bala pain nmigire */
+      display: block;
+      /* tag a inline hast va bara tagaye inline padding az chap va rast emal mishe fght va bala pain nmigire */
       text-decoration: none;
-      border: 1px solid transparent;/* bara hal tekon khordan item / borderi darim namari ba in size */
+      border: 1px solid transparent;
+      /* bara hal tekon khordan item / borderi darim namari ba in size */
     }
-    #main-header nav ul li a:hover {/* sudo class hamishe ye noghte / yani tain knim to ye state khasi in sharayeto dashte bashe */
-      background:#f7f7f7;
+
+    #main-header nav ul li a:hover {
+      /* sudo class hamishe ye noghte / yani tain knim to ye state khasi in sharayeto dashte bashe */
+      background: #f7f7f7;
       border: 1px solid #e1e1e1;
       border-radius: 3px;
     }
@@ -70,14 +100,198 @@
     .clearfix:after {
       visibility: hidden;
       display: block;
-      font-size:0;
+      font-size: 0;
       content: " ";
       clear: both;
       height: 0;
     }
+
+    /* ---------------------------------------------------------------------------- */
+    #featured-article {}
+
+    #featured-article h2,
+    #featured-article h3 {
+      margin: 5px 0;
+    }
+
+    #featured-article figure {
+      float: left;
+      margin: 0;
+      margin-right: 16px;
+    }
+
+    #featured-article figure img {
+      width: 200px;
+    }
+
+    #featured-article p {
+      overflow: scroll;
+      /* agar matn zad biron eshkali ndre bezar bmone age heigh brash taeen knim va overflow hidden bashe bagharo cut mikne va auto scroll mikne az pain bala va scroll az tarafin agar height va width taeen knim scroll mikne */
+      height: 50px;
+      border: 1px solid #AAA;
+    }
+
+    .container {
+      width: 960px;
+      /* behtarin meghdar width hast 960 px chon to aksar scream ha khonde mishe*/
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #f7f7f7;
+      border: 1px solid rgb(158, 153, 153);
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .post-list article {
+      padding-left: 200px;
+      position: relative;
+    }
+
+    .post-list article footer {
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      width: 200px;
+    }
+
+    .post-list figure img {
+      height: 600px;
+      width: 100%;
+      /* max-width: 100%; */
+    }
+
+    .post-list figure figcaption {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .post-list time {
+      color: rgb(71, 64, 64);
+      padding-bottom: 8px;
+      /* bara tag inline padding top va bottom kar nmikne */
+      display: block;
+    }
+
+    .post-list li {
+      border-bottom: 1px solid black;
+      margin-bottom: 20px;
+      /* dark kamel fargh bein margin va padding inja moshakhas mishe */
+      padding-bottom: 20px;
+    }
+
+    .post-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    #footer-links {
+      margin-top: 20px;
+      background: #fff;
+      border-top: 3px dashed #e1e1e1;
+      border-bottom: 3px dashed #e1e1e1;
+      padding: 20px 5px;
+    }
+
+    #footer-links .column {
+      width: 50%;
+      float: left;
+    }
+
+    #footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #footer-links ul li {
+      padding: 10px 5px;
+    }
+
+    #footer-links h1 {
+      margin: 10px 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    #footer-links a {
+      text-decoration: none;
+    }
+
+    .social-link {
+      /*       background: url(https://upload.wikimedia.org/wikipedia/en/9/9f/Pubgbattlegrounds.png) left center no-repeat */
+      padding: 10px 0;
+      padding-left: 30px;
+    }
+
+    .social-link.tel {
+      /* vaghti fasele nmidim va posht sar ham ba . minevisim yani donbal klasi hastim ke har do ro dashte bashe (va) */
+      background: url(https://image.pngaaa.com/311/6245311-middle.png);
+      /*       background: url(https://upload.wikimedia.org/wikipedia/en/9/9f/Pubgbattlegrounds.png) left center no-repeat */
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 25px;
+    }
+
+    .social-link.ins {
+      background: url(https://library.kissclipart.com/20181125/ee/kissclipart-instagram-empresa-clipart-naggiar-vineyards-instag-93d9577ed2c950b7.jpg);
+      /*       background: url(https://upload.wikimedia.org/wikipedia/en/9/9f/Pubgbattlegrounds.png) left center no-repeat */
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 25px;
+    }
+
+    body>footer {
+      /* yaani bro footeri ro peyda kn ke mostaghima dar body hast / farzand mostghim body */
+      padding: 20px 0;
+    }
+
+    body>footer span {
+      float: left;
+      margin: 0 20px;
+    }
+
+    body>footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    body>footer ul li {
+      float: left;
+      margin-right: 20px;
+      color: rgb(0, 0, 0);
+    }
+
+    body>footer ul li::after
+
+    /* pesudo element -> element majazi */
+      {
+      content: "-";
+      margin-left: 10px;
+    }
+
+    body>footer ul li:last-child::after {
+      content: "";
+      margin-right: 0;
+    }
+
+    /* .social-link[rel="external"]
+    {
+      color:red;
+    } --------------------------------------------------important-----------------------------------------------------*/
   </style>
 
-
+  <!-- d 25:43 v4 releative ->frz kn pos ndre baad nesbat be bironi tarin tag hesab kn top left va ... -->
+  <!-- d 25:43 v4 absoloute ->meghdar top va left nesbat be avalin pos property pos dar dakhele tag sanjide mishe / age kasi pos ndsh nesbat be bala chap safhe misanje (view port) ... -->
 
 
 
@@ -86,192 +300,222 @@
 <body>
   <header id="main-header" class="clearfix">
     <!-- tag menu asli chi bashe -->
-    <h1>Plyaers Unknown Battlegrounds</h1>
-    <nav>
-      <!-- bara linka asli bayad az nav estefade beshe va komak mikne browser va search engine ha behtar motevaje beshan -->
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="i.html">Blog</a></li>
-        <li><a href="j.html">About</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Plyaers Unknown Battlegrounds</h1>
+      <nav>
+        <!-- bara linka asli bayad az nav estefade beshe va komak mikne browser va search engine ha behtar motevaje beshan -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="i.html">Blog</a></li>
+          <li><a href="j.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <aside>
-    <figure>
-      <!-- vaghti estefade mishe ke ye aks ba etelaat janebi mikhaym bezarim -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Pubgbattlegrounds.png" alt="unknownbattlegrounds" />
-      <figcaption>first labi image of pubg</figcaption>
-    </figure>
-    <!-- yechizi mortabet ba mohtava vali kharej az oon ro bekhaim namayesh bedim -->
-    <header>
-      <!-- header avali bara kol site dovomi bara aside fght -->
-      <h2>Pubg Game</h2>
-      <h3><a href="firstim.html">Pubg At first</a></h3>
-    </header>
-    <p>Krafton had looked to expand PUBG beyond the core game as to expand the narrative univ
-      erse. As part of this, PlayerUnknown's Battlegrounds was quietly rebranded as PUBG Battlegrounds around July 2021
-    </p>
-  </aside>
 
-  <main>
-    <!-- mohtava asli page / mohtava e ke hey avaz mishe -->
-    <ol>
-      <li>
-        <article>
-          <!-- mohtava va matn kamel mesl block post -->
-          <header>
-            <!-- headding vaghti bashe bara chizi -->
-            <footer>
-              <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
-              <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
-              <address>
-                By <a href="#">Reza</a>
-              </address><!-- author kie -->
-            </footer>
-            <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
-                ex officia eligendi modi impedit dicta error illum eum totam debitis! Facilis.</a>
-            </h2>
-          </header>
-          <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur rationio soluta tenetur
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-            </p>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article>
-          <!-- mohtava va matn kamel mesl block post -->
+  <div class="container">
 
-          <header>
-            <!-- headding vaghti bashe bara chizi -->
-            <footer>
-              <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
-              <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
-              <address>
-                By <a href="#">Reza</a>
-              </address><!-- author kie -->
-            </footer>
-            <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
-                ex officiaam debitis! Facilis.</a>
-            </h2>
-          </header>
-          <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-            </p>
+    <aside id="featured-article" class="clearfix card">
+      <figure>
+        <!-- vaghti estefade mishe ke ye aks ba etelaat janebi mikhaym bezarim -->
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Pubgbattlegrounds.png" alt="unknownbattlegrounds" />
+        <figcaption>first labi image of pubg</figcaption>
+      </figure>
+      <!-- yechizi mortabet ba mohtava vali kharej az oon ro bekhaim namayesh bedim -->
+      <header>
+        <!-- header avali bara kol site dovomi bara aside fght -->
+        <h2>Pubg Game</h2>
+        <h3><a href="firstim.html">Pubg At first</a></h3>
+      </header>
+      <p>Krafton had looked to expand PUBG beyond the core game as to expand the narrative univ
+        erse. As part of this, PlayerUnknown's Battlegrounds was quietly rebranded as PUBG Battlegrounds around July
+        2021
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+        ad looked to expand PUBG beyond the core game as toad looked to expand PUBG beyond the core game as to
+      </p>
+    </aside>
 
-            <figure>
-              <img width="320px"
-                src="https://watermark.lovepik.com/photo/20211202/large/lovepik-shenzhen-tencent-binhai-building-media-map-for-picture_501399835.jpg"
-                alt="tencent game" />
-              <figcaption>Tencent Company</figcaption>
+    <main class="card">
+      <!-- mohtava asli page / mohtava e ke hey avaz mishe -->
+      <ol class="post-list">
+        <li>
+          <article>
+            <!-- mohtava va matn kamel mesl block post -->
+            <header>
+              <!-- headding vaghti bashe bara chizi -->
+              <footer>
+                <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
+                <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
+                <address>
+                  By <a href="#">Reza</a>
+                </address><!-- author kie -->
+              </footer>
+              <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
+                  ex officia eligendi modi impedit dicta error illum eum totam debitis! Facilis.</a>
+              </h2>
+            </header>
+            <div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
                 nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
                 ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur rationio soluta tenetur
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
               </p>
-            </figure>
-          </div>
-          <details>
-            <summary>more about tencent</summary><!-- internet expleror support nmikne in tgo -->
-            <p>derit dolores rem sunt! Co</p>
-          </details>
-        </article>
-      </li>
-      <li>
-        <article>
-          <!-- mohtava va matn kamel mesl block post -->
+            </div>
+          </article>
+        </li>
+        <li>
+          <article>
+            <!-- mohtava va matn kamel mesl block post -->
 
-          <header>
-            <!-- headding vaghti bashe bara chizi -->
-            <footer>
-              <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
-              <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
-              <address>
-                By <a href="#">Reza</a>
-              </address><!-- author kie -->
-            </footer>
-            <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
-                ex </a>
-            </h2>
-          </header>
-          <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-              Lorem ipsum dolor sur ratione distinctio soluta tenetur
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
-              nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
-              ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
-            </p>
-          </div>
-        </article>
-      </li>
-    </ol>
-  </main>
+            <header>
+              <!-- headding vaghti bashe bara chizi -->
+              <footer>
+                <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
+                <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
+                <address>
+                  By <a href="#">Reza</a>
+                </address><!-- author kie -->
+              </footer>
+              <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
+                  ex officiaam debitis! Facilis.</a>
+              </h2>
+            </header>
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+              </p>
 
-  <section>
-    <!-- yek bakhsh / to html4 age bodim bayad az div estfade mikrdim-->
-    <div>
-      <h1>Browse</h1>
-      <ul>
-        <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
-            Lorem ipsum dolor sit amet consectetur adipisicing e
-            olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
-        <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
-            Lorem ipsum dolor sit amet consectetur adipisicing e
-            olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
-        <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
-            Lorem ipsum dolor sit amet consectetur adipisicing e
-            olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
-      </ul>
+              <figure>
+                <img
+                  src="https://watermark.lovepik.com/photo/20211202/large/lovepik-shenzhen-tencent-binhai-building-media-map-for-picture_501399835.jpg"
+                  alt="tencent game" />
+                <figcaption>Tencent Company</figcaption>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                  nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                  ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
+                </p>
+                <details>
+                  <summary>more about tencent</summary><!-- internet expleror support nmikne in tgo -->
+                  <p>add soon</p>
+                </details>
+              </figure>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article>
+            <!-- mohtava va matn kamel mesl block post -->
+
+            <header>
+              <!-- headding vaghti bashe bara chizi -->
+              <footer>
+                <!-- har vaghti ke mikhaym bara elementi ke dakhelesh gharar dare etelaat ezafi ya janebi gharar bedim -->
+                <time datetime="2022-08-8T03:55+3:30">April 2,2022 03:55am</time>
+                <address>
+                  By <a href="#">Reza</a>
+                </address><!-- author kie -->
+              </footer>
+              <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing el
+                  ex </a>
+              </h2>
+            </header>
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+                Lorem ipsum dolor sur ratione distinctio soluta tenetur
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, provide
+                nt distinctio dicta doloribus harum debitis rem saepe sequi soluta voluptas praese
+                ntium. Reprehenderit dolores rem sunt! Consectetur ratione distinctio soluta tenetur
+              </p>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </main>
+  </div>
+
+  <section id="footer-links" class="clearfix">
+    <div class="container">
+      <!-- yek bakhsh / to html4 age bodim bayad az div estfade mikrdim-->
+      <div class="column">
+        <h1>Browse</h1>
+        <ul>
+          <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
+              Lorem ipsum dolor sit amet consectetur adipisicing e
+              olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
+          <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
+              Lorem ipsum dolor sit amet consectetur adipisicing e
+              olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
+          <li><a href="#">orem ipsum dolor sur ratione distinctio soluta tenetur
+              Lorem ipsum dolor sit amet consectetur adipisicing e
+              olor sit amet consectetur adipisicing elit. Perferendis, pr</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h1>Social</h1>
+        <ul>
+          <li><a class="social-link tel" rel="external" href="#">Telegram</a></li>
+          <!-- rel="external" yaani linka khareji hastand dakhel khod site nistand -->
+          <li><a class="social-link ins" rel="external" href="#">Instagram</a></li>
+          <!-- rel="external" yaani linka khareji hastand dakhel khod site nistand -->
+        </ul>
+      </div>
     </div>
-    <div>
-      <h1>Social</h1>
-      <ul>
-        <li><a href="#">Telegram</a></li>
-        <li><a href="#">Instagram</a></li>
-      </ul>
-    </div>
+
   </section>
 
-  <footer>
+  <!--   <div class="container">  -->
+  <footer class="clearfix">
     <!-- bara etelaat janebi ya ezafi -->
-    <span>&copy; Reza Ab 2022</span>
-    <ul>
-      <li>
-        <a href="#">Privacy policy</a>
-        <!-- chetori az etelaat karbara estefade miknim va tozih bedim va hatma bayad dashte bashan -->
-      </li><!-- mailto khod brwser gmail ro baz mikne -->
-      <li>
-        <a href="mailto:reab1381@gmail.com">Terms Of Service</a><!-- chiaro karbara ghabol kardan va register kardan -->
-      </li>
-    </ul>
+    <div class="container">
+      <span>&copy; Reza Ab 2022</span>
+      <ul>
+        <li>
+          <a href="#">Privacy policy</a>
+          <!-- chetori az etelaat karbara estefade miknim va tozih bedim va hatma bayad dashte bashan -->
+        </li><!-- mailto khod brwser gmail ro baz mikne -->
+        <li>
+          <a href="mailto:reab1381@gmail.com">Terms Of Service</a>
+          <!-- chiaro karbara ghabol kardan va register kardan -->
+        </li>
+        <li>
+          <a href="#">Support</a>
+        </li>
+      </ul>
+    </div>
   </footer>
+  <!-- </div> -->
 
 </body>
 
